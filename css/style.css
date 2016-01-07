@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+/*
+ * Base
+ */
+html { 
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	min-height: 500px;
+	min-width: 650px;
+}
+body { 
+	margin: 0;
+	font-size: 0;
+	color: #FFFFFF;
+	font-family: 'Alegreya Sans', sans-serif;
+	line-height: 1.231;
+	background-color: #e6e6e6;
+}
+body, html, #test03 {
+	height: 100%;
+	width: 100%;
+}
+h1 {
+	font-size: 30px;
+	color: #1a1a1a;
+	margin: 5px 0px 10px;
+	padding: 3px;
+}
+p {
+	font-size: 14px;
+	color: #FFF;
+	margin: 0px;
+	padding: 2px;
+
+}
+
+/*
+ * Grid
+ */
+.brick-900 {
+	max-width: 900px;
+	margin: auto;
+	overflow: hidden;
+}
+.brick-1, .brick-2, .brick-3, .brick-4, .brick-5, .brick-6, .brick-7, .brick-8 {
+	display: inline-block;
+	overflow: hidden;
+	vertical-align: top;
+	text-align: center;
+}
+.brick-1 {
+	width: 12.5%;
+}
+.brick-2 {
+	width: 25%;
+}
+.brick-3 {
+	width: 37.5%;
+}
+.brick-4 {
+	width: 50%;
+}
+.brick-5 {
+	width: 62.5%;
+}
+.brick-6 {
+	width: 75%;
+}
+.brick-7 {
+	width: 87.5%;
+}
+.brick-8 {
+	width: 100%;
+}
+.left {
+	text-align: left;
+}
+.right {
+	text-align: right;
+}
+.center {
+	text-align: center !important;
+}
+.bg {
+	background-color: rgba(0, 0, 0, 0.1);
+}
