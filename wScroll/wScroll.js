@@ -112,13 +112,21 @@ function wScrollSizeChange(force) {
 				document.getElementById(wScrollList[i].id + "_bar").style.visibility = "hidden";
 				document.getElementById(wScrollList[i].id + "_content").style.paddingRight = "0px";
 				wScrollList[i].smaller = true;
+				
+				document.getElementById(wScrollList[i].id).marginPosition = 0;
 			} else {
 				document.getElementById(wScrollList[i].id + "_bar").style.visibility = "";
 				document.getElementById(wScrollList[i].id + "_content").style.paddingRight = "";
 				wScrollList[i].smaller = false;
+				
+				if (document.getElementById(wScrollList[i].id).marginPosition < document.getElementById(wScrollList[i].id).maxHeight - document.getElementById(wScrollList[i].id).scrollingHeight) {
+					document.getElementById(wScrollList[i].id).marginPosition = document.getElementById(wScrollList[i].id).maxHeight - document.getElementById(wScrollList[i].id).scrollingHeight;
+				}
 			}
 			
+			document.getElementById(wScrollList[i].id + "_scrolling").style.marginTop = document.getElementById(wScrollList[i].id).marginPosition + "px";
 			document.getElementById(wScrollList[i].id + "_scroll").style.height = wScrollList[i].scrollSize + "px";
+			document.getElementById(wScrollList[i].id + "_scroll").style.marginTop = - document.getElementById(wScrollList[i].id).maxHeight / document.getElementById(wScrollList[i].id).scrollingHeight * document.getElementById(wScrollList[i].id).marginPosition + "px";
 			
 			//console.log(document.getElementById(wScrollList[i].id + "_scroll").style.height);
 			
