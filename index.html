@@ -3,91 +3,123 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>wScroll</title>
-	<meta name="description" content="Default testing file of wScroll library.">
+	<title>wScroll examples</title>
 	<meta name="author" content="wallet616">
-
 	<link rel="stylesheet" href="css/style.css">
-	<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans:300' rel='stylesheet' type='text/css'>
 	
 	<link rel="stylesheet" href="wScroll/wScroll.css">
 	<script src="wScroll/wScroll.js"></script>
+	
+	<script>
+		squa = 0;
+		window.addEventListener('load', function () {
+			(function squares() {
+				if (squa <= 15) {
+					var str = "";
+					for (var i=0; i <= squa; i++) {
+						str += "<div class='squ'></div>";
+					};
+					squa++;
+					document.getElementById("myDiv2").innerHTML = str;
+				} else {
+					squa = 0;
+					document.getElementById("myDiv2").innerHTML = "<div class='squ'></div>";
+				}
+				setTimeout(function(){squares();}, 1000);
+			})();
+		});
+	</script>
 </head>
 	
 <body>
-	<script>wScroll("test03", 0);</script>
-	<div id="test03" style="height: 100%;">
-		<div style="height: 1500px;"> </div>
+	<div style="height: 100px;"> </div>
 	<div class="brick-900 bg">
-		<h1>Example: </h1>
+		<h1>wScroll examples: </h1>
 		
-		<div class="brick-6">
-			<script>wScroll("test01", 250);</script>
+		<div class="brick-4">
 			<div style="background-color: rgba(0, 0, 0, 0.3);" id="test01">
-				<div id="jeden">
-					<p class="left">
-						DO NOT use a 1x1 semi transparent PNG. Size the PNG up to 10x10, 100x100, etc. Whatever makes sense on your page. (I used a 200x200 PNG and it was only 0.25 kb, so there's no real concern over file size here.) 
-						After visiting this post, I created my web page with 3, 1x1 PNGs with varying transparency.
-						Dreamweaver CS5 was tanking. I was having flash backs to DOS!!! Apparently any time I tried to scroll, insert text, basically do anything, DW was trying to reload the semi transparent areas 1x1 pixel at a time ... YIKES!
-					</p>
-					<p class="left">
-						Adobe tech support didn't even know what the problem was, but told me to rebuild the file (it worked on their systems, incidentally). It was only when I loaded the first transparent PNG into the css file that the doc dove deep again.
-						Then I found a post on another help site about PNGs crashing Dreamweaver. Size your PNG up; there's no downside to doing so.
-						DO NOT use a 1x1 semi transparent PNG. Size the PNG up to 10x10, 100x100, etc. Whatever makes sense on your page. (I used a 200x200 PNG and it was only 0.25 kb, so there's no real concern over file size here.) 
-						After visiting this post, I created my web page with 3, 1x1 PNGs with varying transparency.
+				<div id="myDiv">
+					<p>
+						The standard Lorem Ipsum passage, used since the 1500s "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
 					</p>
 					<img src="wallhaven-88802.jpg" width="100%"/>
-					<p class="left">
-						Dreamweaver CS5 was tanking. I was having flash backs to DOS!!! Apparently any time I tried to scroll, insert text, basically do anything, DW was trying to reload the semi transparent areas 1x1 pixel at a time ... YIKES!
-						Adobe tech support didn't even know what the problem was, but told me to rebuild the file (it worked on their systems, incidentally). It was only when I loaded the first transparent PNG into the css file that the doc dove deep again.
-						Then I found a post on another help site about PNGs crashing Dreamweaver. Size your PNG up; there's no downside to doing so.
-						DO NOT use a 1x1 semi transparent PNG. Size the PNG up to 10x10, 100x100, etc. Whatever makes sense on your page. (I used a 200x200 PNG and it was only 0.25 kb, so there's no real concern over file size here.) 
-						After visiting this post, I created my web page with 3, 1x1 PNGs with varying transparency.
-						Dreamweaver CS5 was tanking. I was having flash backs to DOS!!! Apparently any time I tried to scroll, insert text, basically do anything, DW was trying to reload the semi transparent areas 1x1 pixel at a time ... YIKES!
-					</p>
-					<p class="left">
-						Dreamweaver CS5 was tanking. I was having flash backs to DOS!!! Apparently any time I tried to scroll, insert text, basically do anything, DW was trying to reload the semi transparent areas 1x1 pixel at a time ... YIKES!
-						Adobe tech support didn't even know what the problem was, but told me to rebuild the file (it worked on their systems, incidentally). It was only when I loaded the first transparent PNG into the css file that the doc dove deep again.
-						Then I found a post on another help site about PNGs crashing Dreamweaver. Size your PNG up; there's no downside to doing so.
-						DO NOT use a 1x1 semi transparent PNG. Size the PNG up to 10x10, 100x100, etc. Whatever makes sense on your page. (I used a 200x200 PNG and it was only 0.25 kb, so there's no real concern over file size here.) 
-						After visiting this post, I created my web page with 3, 1x1 PNGs with varying transparency.
-						Dreamweaver CS5 was tanking. I was having flash backs to DOS!!! Apparently any time I tried to scroll, insert text, basically do anything, DW was trying to reload the semi transparent areas 1x1 pixel at a time ... YIKES!
-					</p>
-					<p class="left">
-						Dreamweaver CS5 was tanking. I was having flash backs to DOS!!! Apparently any time I tried to scroll, insert text, basically do anything, DW was trying to reload the semi transparent areas 1x1 pixel at a time ... YIKES!
-						Adobe tech support didn't even know what the problem was, but told me to rebuild the file (it worked on their systems, incidentally). It was only when I loaded the first transparent PNG into the css file that the doc dove deep again.
-						Then I found a post on another help site about PNGs crashing Dreamweaver. Size your PNG up; there's no downside to doing so.
-						DO NOT use a 1x1 semi transparent PNG. Size the PNG up to 10x10, 100x100, etc. Whatever makes sense on your page. (I used a 200x200 PNG and it was only 0.25 kb, so there's no real concern over file size here.) 
-						After visiting this post, I created my web page with 3, 1x1 PNGs with varying transparency.
-						Dreamweaver CS5 was tanking. I was having flash backs to DOS!!! Apparently any time I tried to scroll, insert text, basically do anything, DW was trying to reload the semi transparent areas 1x1 pixel at a time ... YIKES!
-					</p>
-					<p class="left">
-						Adobe tech support didn't even know what the problem was, but told me to rebuild the file (it worked on their systems, incidentally). It was only when I loaded the first transparent PNG into the css file that the doc dove deep again.
-						Then I found a post on another help site about PNGs crashing Dreamweaver. Size your PNG up; there's no downside to doing so.
+					<p>
+						The standard Lorem Ipsum passage, used since the 1500s "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
 					</p>
 				</div>
 			</div>
+			<script>wScroll("test01", 250);</script>
+		</div>
+		<div class="brick-4">
+			<h3>Code:</h3>
+			<p class="quote">
+				&lt;div id="test01"&gt;<br>
+				&emsp;&lt;div id="myDiv"&gt;<br>
+					&emsp;&emsp;&lt;p&gt;<br>
+						&emsp;&emsp;&emsp;The standard Lorem...<br>
+					&emsp;&emsp;&lt;/p&gt;<br>
+					&emsp;&emsp;&lt;img src="wallhaven-88802.jpg" width="100%"/&gt;<br>
+					&emsp;&emsp;&lt;p&gt;<br>
+						&emsp;&emsp;&emsp;The standard Lorem...<br>
+					&emsp;&emsp;&lt;/p&gt;<br>
+				&emsp;&lt;/div&gt;<br>
+				&lt;/div&gt;<br>
+				&lt;script&gt; wScroll("test01", 250); &lt;/script&gt;<br>
+			</p>
 		</div>
 		
-		<script>wScroll("test02", 200);</script>
-		<div class="brick-2">
-			<div style="background-color: rgba(0, 0, 0, 0.3);" id="test02">
-				<p class="left">
-					DO NOT use a 1x1 semi transparent PNG. Size the PNG up to 10x10, 100x100, etc. Whatever makes sense on your page. (I used a 200x200 PNG and it was only 0.25 kb, so there's no real concern over file size here.) 
-					After visiting this post, I created my web page with 3, 1x1 PNGs with varying transparency.
-					Dreamweaver CS5 was tanking. I was having flash backs to DOS!!! Apparently any time I tried to scroll, insert text, basically do anything, DW was trying to reload the semi transparent areas 1x1 pixel at a time ... YIKES!
+		<div style="height: 10px;"> </div>
+		
+		<div class="brick-4">
+			<div class="brick-4">
+				<div style="background-color: rgba(0, 0, 0, 0.3);" id="test02">
+					<div id="myDiv2">
+						<p>
+							The standard Lorem Ipsum passage, used since the 1500s "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+						</p>
+					</div>
+				</div>
+				<script>wScroll("test02", 200);</script>
+			</div>
+				
+			<div class="brick-4">
+				<div style="background-color: rgba(0, 0, 0, 0.3); height: 230px;" id="test04">
+					<div id="myDiv3">
+						<p>
+							The standard Lorem Ipsum passage, used since the 1500s "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+						</p>
+					</div>
+				</div>
+				<script>wScroll("test04", 0);</script>
+			</div>
+		</div>
+		<div class="brick-4">
+			<div class="brick-4">
+				<h3>Code:</h3>
+				<p class="quote">
+					&lt;div id="test02"&gt;<br>
+					&emsp;&lt;div id="myDiv2"&gt;<br>
+					&emsp;&lt;/div&gt;<br>
+					&lt;/div&gt;<br>
+					&lt;script&gt; wScroll("test02", 200); &lt;/script&gt;<br>
 				</p>
-				<p class="left">
-					Adobe tech support didn't even know what the problem was, but told me to rebuild the file (it worked on their systems, incidentally). It was only when I loaded the first transparent PNG into the css file that the doc dove deep again.
-					Then I found a post on another help site about PNGs crashing Dreamweaver. Size your PNG up; there's no downside to doing so.
-					DO NOT use a 1x1 semi transparent PNG. Size the PNG up to 10x10, 100x100, etc. Whatever makes sense on your page. (I used a 200x200 PNG and it was only 0.25 kb, so there's no real concern over file size here.) 
-					After visiting this post, I created my web page with 3, 1x1 PNGs with varying transparency.
+			</div>
+			<div class="brick-4">
+				<h3>Code:</h3>
+				<p class="quote">
+					&lt;div id="test03" style="height: 230px;"&gt;<br>
+					&emsp;&lt;div id="myDiv3"&gt;<br>
+						&emsp;&emsp;&lt;p&gt;<br>
+							&emsp;&emsp;&emsp;The standard Lorem...<br>
+						&emsp;&emsp;&lt;/p&gt;<br>
+					&emsp;&lt;/div&gt;<br>
+					&lt;/div&gt;<br>
+					&lt;script&gt; wScroll("test03", 0); &lt;/script&gt;<br>
 				</p>
 			</div>
 		</div>
-		
+
 		
 	</div>
-</div>
 </body>
 </html>

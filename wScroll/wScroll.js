@@ -16,6 +16,7 @@ function wScroll(id, heig) {
 		document.getElementById(id + "_bar").style.height = heigh;
 		
 		document.getElementById(id).addEventListener("mousewheel", wScrollMove, false);
+		document.getElementById(id).addEventListener("keydown", wScrollMove, false);
 		
 		document.getElementById(id).destinationPosition = 0;
 		document.getElementById(id).marginPosition = 0;
@@ -36,6 +37,9 @@ function wScroll(id, heig) {
 function wScrollMove(e) {
 	var evt = window.event || e;
 	var delta = evt.detail ? evt.detail : evt.wheelDelta;
+	var keyCode = evt.keyCode;
+	
+	console.log(keyCode);
 	
     if (evt.stopPropagation) {
         evt.stopPropagation();
