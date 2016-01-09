@@ -4,16 +4,19 @@
  * Default
  */
 .wScrollConent {
-	overflow: hidden;
+	overflow: hidden; /* Do not change */
+	height: 100%; /* Do not change */
+	
 	padding-right: 7px;
 }
 
 .wScrollScrollBar {
-	float: right;
-	width: 7px;
-	overflow: hidden;
-	margin-right: -7px;
+	float: right; /* Do not change */
+	overflow: hidden; /* Do not change */
+	height: 100%; /* Do not change */
 	
+	margin-right: -7px;
+	width: 7px;
 	-webkit-box-shadow: inset -2px 0px 5px 0px rgba(0,0,0,0.05);
 	-moz-box-shadow: inset -2px 0px 5px 0px rgba(0,0,0,0.05);
 	box-shadow: inset -2px 0px 5px 0px rgba(0,0,0,0.05);
@@ -22,8 +25,7 @@
 .wScrollScroll {
 	width: 4px;
 	margin-left: 3px;
-	opacity: 0.8;
-	
+	opacity: 0.9;
 	-webkit-box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.3);
 	-moz-box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.3);
 	box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.3);

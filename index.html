@@ -37,7 +37,7 @@
 		<h1>wScroll examples: </h1>
 		
 		<div class="brick-4">
-			<div style="background-color: rgba(0, 0, 0, 0.3);" id="test01">
+			<div style="background-color: rgba(0, 0, 0, 0.3); height: 250px;" id="test01">
 				<div id="myDiv">
 					<p>
 						The standard Lorem Ipsum passage, used since the 1500s "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
@@ -48,12 +48,12 @@
 					</p>
 				</div>
 			</div>
-			<script>wScroll("test01", 250);</script>
+			<script>wScroll("test01");</script>
 		</div>
 		<div class="brick-4">
 			<h3>Code:</h3>
 			<p class="quote">
-				&lt;div id="test01"&gt;<br>
+				&lt;div id="test01" style="height: 250px;"&gt;<br>
 				&emsp;&lt;div id="myDiv"&gt;<br>
 					&emsp;&emsp;&lt;p&gt;<br>
 						&emsp;&emsp;&emsp;The standard Lorem...<br>
@@ -64,7 +64,7 @@
 					&emsp;&emsp;&lt;/p&gt;<br>
 				&emsp;&lt;/div&gt;<br>
 				&lt;/div&gt;<br>
-				&lt;script&gt; wScroll("test01", 250); &lt;/script&gt;<br>
+				&lt;script&gt; wScroll("test01"); &lt;/script&gt;<br>
 			</p>
 		</div>
 		
@@ -72,23 +72,23 @@
 		
 		<div class="brick-4">
 			<div class="brick-4">
-				<div style="background-color: rgba(0, 0, 0, 0.3);" id="test02">
+				<div style="background-color: rgba(0, 0, 0, 0.3); height: 200px;" id="test02">
 					<div id="myDiv2">
 						...
 					</div>
 				</div>
-				<script>wScroll("test02", 200);</script>
+				<script>wScroll("test02");</script>
 			</div>
 				
-			<div class="brick-4">
-				<div style="background-color: rgba(0, 0, 0, 0.3); height: 230px;" id="test04">
+			<div class="brick-4" style="height: 230px;">
+				<div style="background-color: rgba(0, 0, 0, 0.3); height: 100%;" id="test04">
 					<div id="myDiv3">
 						<p>
 							The standard Lorem Ipsum passage, used since the 1500s "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
 						</p>
 					</div>
 				</div>
-				<script>wScroll("test04", 0);</script>
+				<script>wScroll("test04");</script>
 			</div>
 		</div>
 		<div class="brick-4">
@@ -97,22 +97,25 @@
 				<p class="quote">
 					&lt;div id="test02"&gt;<br>
 					&emsp;&lt;div id="myDiv2"&gt;<br>
+					&emsp;&emsp;...<br>
 					&emsp;&lt;/div&gt;<br>
 					&lt;/div&gt;<br>
-					&lt;script&gt; wScroll("test02", 200); &lt;/script&gt;<br>
+					&lt;script&gt; wScroll("test02"); &lt;/script&gt;<br>
 				</p>
 			</div>
 			<div class="brick-4">
 				<h3>Code:</h3>
 				<p class="quote">
-					&lt;div id="test03" style="height: 230px;"&gt;<br>
-					&emsp;&lt;div id="myDiv3"&gt;<br>
-						&emsp;&emsp;&lt;p&gt;<br>
-							&emsp;&emsp;&emsp;The standard Lorem...<br>
-						&emsp;&emsp;&lt;/p&gt;<br>
+					&lt;div class="brick-4" style="height: 230px;"&gt;<br>
+					&emsp;&lt;div id="test03" style="height: 100%;"&gt;<br>
+					&emsp;&emsp;&lt;div id="myDiv3"&gt;<br>
+						&emsp;&emsp;&emsp;&lt;p&gt;<br>
+							&emsp;&emsp;&emsp;&emsp;The standard Lorem...<br>
+						&emsp;&emsp;&emsp;&lt;/p&gt;<br>
+					&emsp;&emsp;&lt;/div&gt;<br>
 					&emsp;&lt;/div&gt;<br>
+					&emsp;&lt;script&gt; wScroll("test03"); &lt;/script&gt;<br>
 					&lt;/div&gt;<br>
-					&lt;script&gt; wScroll("test03", 0); &lt;/script&gt;<br>
 				</p>
 			</div>
 		</div>

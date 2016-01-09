@@ -24,9 +24,9 @@ Then create an object with specified `id`.
   </div>
 </div>
 ```
-Finaly add somewhere script that runs the library. Folowing arguments means in the order: `id of the element`, `height in pixels`.
+Finaly add somewhere script that runs the library. Folowing arguments means in the order: `ID_of_the_element`.
 ```
-<script>wScroll("test01", 250);</script>
+<script>wScroll("test01");</script>
 ```
-To leve the height as it was, se the second argument to `0`. Everything should works fine.
-Important: You can change properties of the object that You runs the script on, but You cannot change directly the content of that object. In case you want to dynamicly change the content, it is necesery to create one more object inside of the very first one, like that called `myDiv`. Then modify `myDiv` in any way you want.
+Height of the object that you call the function on always matchest hte height of that element. It means if You set fixed size it will be that fixed size, if you set height to `100%` then it will match te height of the parent.
+Important: You can change properties of the object that You runs the script on, but You cannot change directly the content *(but You can chane the properties like height and width)* of that object. In case you want to dynamicly change the content, it is necesery to create one more object inside of the very first one, like that called `myDiv`. Then modify `myDiv` in any way you want.

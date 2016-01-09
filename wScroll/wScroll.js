@@ -1,19 +1,12 @@
 wScrollSpeed = 0.15;
 wScrollList = [];
 
-function wScroll(id, heig) {
+function wScroll(id) {
 	window.addEventListener('load', function () {
 		document.getElementById(id).innerHTML = "<div class='wScrollConent' id='" + id + "_content'><div class='wScrollScrollBar' id='" + id + "_bar'><div class='wScrollScroll' id='" + id + "_scroll'></div></div><div class='wScrollScrolling' id='" + id + "_scrolling'>" + document.getElementById(id).innerHTML + "</div></div>";
 		
-		var heigh = parseInt(heig);
-		if (heigh > 0) {
-			heigh = heigh + "px";
-		} else {
-			heigh = document.getElementById(id).offsetHeight + "px";
-			
-		}
-		document.getElementById(id + "_content").style.height = heigh;
-		document.getElementById(id + "_bar").style.height = heigh;
+		var heigh = document.getElementById(id).offsetHeight;
+		console.log(heigh);
 		
 		document.getElementById(id).addEventListener("mousewheel", wScrollMove, false);
 		document.getElementById(id).addEventListener("keydown", wScrollMove, false);
@@ -21,8 +14,10 @@ function wScroll(id, heig) {
 		document.getElementById(id).destinationPosition = 0;
 		document.getElementById(id).marginPosition = 0;
 		document.getElementById(id).invoked = false;
-		document.getElementById(id).maxHeight = document.getElementById(id + "_content").offsetHeight;
-		document.getElementById(id).scrollingHeight = document.getElementById(id + "_scrolling").offsetHeight;
+		//document.getElementById(id).smaller = false;
+		//document.getElementById(id).scrollSize = 0;
+		//document.getElementById(id).maxHeight = document.getElementById(id + "_content").offsetHeight;
+		//document.getElementById(id).scrollingHeight = document.getElementById(id + "_scrolling").offsetHeight;
 		
 		wScrollList.push(document.getElementById(id));
 		wScrollSizeChange(true);
@@ -30,29 +25,19 @@ function wScroll(id, heig) {
 }
 
 (function wScrollSizeLoop() {
-	setTimeout(function(){wScrollSizeChange(); wScrollSizeLoop();}, 500);
+	setTimeout(function(){wScrollSizeChange(); wScrollSizeLoop();}, 400);
 	
 })();
  
 function wScrollMove(e) {
 	var evt = window.event || e;
 	var delta = evt.detail ? evt.detail : evt.wheelDelta;
-	var keyCode = evt.keyCode;
-	
-	console.log(keyCode);
 	
     if (evt.stopPropagation) {
         evt.stopPropagation();
     } else {
         evt.cancelBubble = true;
     }
-	
-	//console.log(delta);
-	//console.log(this.id);
-	//console.log(this.destinationPosition);
-	//console.log(this.maxHeight);
-	//console.log(this.scrollingHeight);
-	//console.log(this.invoked);
 	
 	if (!this.smaller) {
 		if ((this.destinationPosition > 0 && delta > 0) || (this.destinationPosition < 0 && delta < 0)) {
@@ -104,9 +89,18 @@ function wScrolling(element) {
 
 function wScrollSizeChange(force) {
 	for(i = 0; i < wScrollList.length; i++) {
-		if (document.getElementById(wScrollList[i].id + "_scrolling").offsetHeight != wScrollList[i].scrollingHeight || force) {
+		if (document.getElementById(wScrollList[i].id + "_scrolling").offsetHeight != wScrollList[i].scrollingHeight || document.getElementById(wScrollList[i].id).offsetHeight != wScrollList[i].maxHeight || force) {
+			wScrollList[i].maxHeight = document.getElementById(wScrollList[i].id + "_content").offsetHeight;
 			wScrollList[i].scrollingHeight = document.getElementById(wScrollList[i].id + "_scrolling").offsetHeight;
 			wScrollList[i].scrollSize = Math.pow(wScrollList[i].maxHeight, 2) / wScrollList[i].scrollingHeight;
+				
+				//console.log(wScrollList[i].id);
+				//console.log(wScrollList[i].scrollingHeight);
+				//console.log(wScrollList[i].scrollSize);
+				//console.log(wScrollList[i].maxHeight);
+				//console.log(this.maxHeight);
+				//console.log(this.scrollingHeight);
+				//console.log(this.invoked);
 			
 			if (document.getElementById(wScrollList[i].id).scrollingHeight < document.getElementById(wScrollList[i].id).maxHeight) {
 				document.getElementById(wScrollList[i].id + "_bar").style.visibility = "hidden";
@@ -127,10 +121,6 @@ function wScrollSizeChange(force) {
 			document.getElementById(wScrollList[i].id + "_scrolling").style.marginTop = document.getElementById(wScrollList[i].id).marginPosition + "px";
 			document.getElementById(wScrollList[i].id + "_scroll").style.height = wScrollList[i].scrollSize + "px";
 			document.getElementById(wScrollList[i].id + "_scroll").style.marginTop = - document.getElementById(wScrollList[i].id).maxHeight / document.getElementById(wScrollList[i].id).scrollingHeight * document.getElementById(wScrollList[i].id).marginPosition + "px";
-			
-			//console.log(document.getElementById(wScrollList[i].id + "_scroll").style.height);
-			
-			//wScrollList[i] = [wScrollList[i][0], document.getElementById(wScrollList[i][0] + "_scrolling").offsetHeight];
 		}
 	}
 };
