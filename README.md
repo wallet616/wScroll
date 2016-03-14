@@ -8,7 +8,7 @@ It is quite usefull if you want to create an list of elements, without using ifr
 Whole plugin is pretty simple, and unfortunately works only at desktop devices. 
 Support for mobile devices will approach soon... probably.
 
-Works only for vertical scrollbar, horizontal isn't and won't be supported.
+Works only for vertical scrollbar, horizontal is not and will not be supported.
 
 ###### Usage
 First You have to link library to you webpage by adding in head section patch to `wScroll.css` and `wScroll.js`.

@@ -10,6 +10,7 @@ function wScroll(id) {
 		
 		document.getElementById(id).addEventListener("mousewheel", wScrollMove, false);
 		document.getElementById(id).addEventListener("keydown", wScrollMove, false);
+		//document.getElementById(id).addEventListener("touchmove mousemove", wScrollTouchMove, false);
 		
 		document.getElementById(id).destinationPosition = 0;
 		document.getElementById(id).marginPosition = 0;
@@ -20,7 +21,7 @@ function wScroll(id) {
 		//document.getElementById(id).scrollingHeight = document.getElementById(id + "_scrolling").offsetHeight;
 		
 		wScrollList.push(document.getElementById(id));
-		wScrollSizeChange(true);
+		wScrollSizeChange();
 	});
 }
 
@@ -28,18 +29,24 @@ function wScroll(id) {
 	setTimeout(function(){wScrollSizeChange(); wScrollSizeLoop();}, 400);
 	
 })();
- 
+
 function wScrollMove(e) {
+	var stop = false;
 	var evt = window.event || e;
 	var delta = evt.detail ? evt.detail : evt.wheelDelta;
+	evt.stopPropagation();
 	
-    if (evt.stopPropagation) {
-        evt.stopPropagation();
-    } else {
-        evt.cancelBubble = true;
-    }
+	if (delta == undefined || delta == 0) {
+		if (evt.keyCode == 38) {
+			delta = 120;
+		} else if (evt.keyCode == 40) {
+			delta = -120;
+		} else {
+			stop = true;
+		}
+	}
 	
-	if (!this.smaller) {
+	if (!this.smaller && !stop) {
 		if ((this.destinationPosition > 0 && delta > 0) || (this.destinationPosition < 0 && delta < 0)) {
 			this.destinationPosition += delta;
 		} else if ((this.destinationPosition == 0) || (this.destinationPosition > 0 && delta < 0) || (this.destinationPosition < 0 && delta > 0)) {
@@ -51,16 +58,9 @@ function wScrollMove(e) {
 			wScrolling(this);
 		}
 	}
-	
-	if (evt.preventDefault) {
-		evt.preventDefault();
-	} else {
-		return false;
-	}
 }
 
 function wScrolling(element) {
-	
 	var delta = element.destinationPosition * wScrollSpeed;
 	element.destinationPosition = element.destinationPosition - delta;
 	
@@ -87,9 +87,9 @@ function wScrolling(element) {
 	}
 }
 
-function wScrollSizeChange(force) {
-	for(i = 0; i < wScrollList.length; i++) {
-		if (document.getElementById(wScrollList[i].id + "_scrolling").offsetHeight != wScrollList[i].scrollingHeight || document.getElementById(wScrollList[i].id).offsetHeight != wScrollList[i].maxHeight || force) {
+function wScrollSizeChange() {
+	for (i = 0; i < wScrollList.length; i++) {
+		if (document.getElementById(wScrollList[i].id + "_scrolling").offsetHeight != wScrollList[i].scrollingHeight || document.getElementById(wScrollList[i].id).offsetHeight != wScrollList[i].maxHeight) {
 			wScrollList[i].maxHeight = document.getElementById(wScrollList[i].id + "_content").offsetHeight;
 			wScrollList[i].scrollingHeight = document.getElementById(wScrollList[i].id + "_scrolling").offsetHeight;
 			wScrollList[i].scrollSize = Math.pow(wScrollList[i].maxHeight, 2) / wScrollList[i].scrollingHeight;
