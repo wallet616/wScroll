@@ -7,11 +7,7 @@ The wScroll library is a tool to create objects like *div*'s with a scrollbar. I
 Whole plugin is pretty simple, and unfortunately works only at desktop devices. 
 Support for mobile devices will approach soon... probably.
 
-<<<<<<< HEAD
 Works only for vertical scrollbar, horizontal is not and will not be supported.
-=======
-Works only as vertical scrollbar, horizontal isn't and won't be supported.
->>>>>>> origin/master
 
 ###### Usage
 First You have to link library to you webpage by adding in head section patch to `wScroll.css` and `wScroll.js`.
