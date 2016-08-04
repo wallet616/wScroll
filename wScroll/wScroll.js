@@ -9,7 +9,7 @@ function wScroll(id) {
 		console.log(heigh);
 		
 		document.getElementById(id).addEventListener("mousewheel", wScrollMove, false);
-		document.getElementById(id).addEventListener("DOMMouseScroll", scrollMove, false);
+		document.getElementById(id).addEventListener("DOMMouseScroll", wScrollMove, false);
 		document.getElementById(id).addEventListener("keydown", wScrollMove, false);
 		//document.getElementById(id).addEventListener("touchmove mousemove", wScrollTouchMove, false);
 		
